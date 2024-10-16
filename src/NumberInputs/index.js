@@ -1,8 +1,8 @@
-function NumberInputs() {
+function NumberInputs({id}) {
     return (
         <>
-            <label htmlFor=''>Bill</label>
-            <input id='' type='number' placeholder='0'/>
+            <label htmlFor='{id}'>Bill</label>
+            <input id='{id}' type='number' placeholder='0'/>
         </>
     )
 }
