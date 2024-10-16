@@ -1,7 +1,7 @@
 function NumberInputs() {
     return (
         <>
-            <label for=''>Bill</label>
+            <label htmlFor=''>Bill</label>
             <input id='' type='number' placeholder='0'/>
         </>
     )
