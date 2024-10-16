@@ -1,6 +1,10 @@
 function WebAppContainer() {
     return (
-    <div className="bg-cyan-100 h-full w-full">
+    <div>
+            <div>
+                <p className='tracking-widest'>SPLI</p>
+                <p>TTER</p>
+            </div>
 
     </div>
     )
