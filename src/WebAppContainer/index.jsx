@@ -30,7 +30,7 @@ function WebAppContainer() {
                             <p className='text-slate-400 text-xs'>/ person</p>
                         </div>
                         <div>
-                            <div>$0.00</div>
+                            <div className="text-teal-400 text-5xl">$0.00</div>
                         </div>
                     </div>
                     <div  className="flex flex-row">
@@ -38,7 +38,7 @@ function WebAppContainer() {
                             <h3 className='text-white'>Total</h3>
                             <p className='text-slate-400 text-xs'>/ person</p>
                         </div>
-                        <div>$0/00</div>
+                        <div className="text-teal-400 text-5xl">$0/00</div>
                     </div>
                     <div>
 
