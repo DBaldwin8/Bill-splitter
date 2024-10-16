@@ -1,3 +1,6 @@
+// import NumberInputs from "../NumberInputs/index.jsx"
+
+
 function WebAppContainer() {
     return (
     <div>
@@ -7,8 +10,9 @@ function WebAppContainer() {
             </div>
             <div>
                 <form>
-                    <p>Bill</p>
-                    
+                <p><label for=''>Bill</label></p>
+                <input id='' type='number' placeholder='0' className="placeholder:text-right"/>
+                
                 </form>
                 <div>
 
