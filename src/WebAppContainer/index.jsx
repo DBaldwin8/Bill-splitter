@@ -23,15 +23,22 @@ function WebAppContainer() {
                         <input id='' type='number' placeholder='0' className="placeholder:text-right"/>
                     </div>
                 </form>
-                <div className=''>
-                    <div>
-                        <h3>Tip Amount</h3>
-                        <p>/ person</p>
-
+                <div className='bg-teal-900 rounded-xl'>
+                    <div className="flex flex-row">
+                        <div>
+                            <h3 className='text-white'>Tip Amount</h3>
+                            <p className='text-slate-400 text-xs'>/ person</p>
+                        </div>
+                        <div>
+                            <div>$0.00</div>
+                        </div>
                     </div>
-                    <div>
-                        <h3>Total</h3>
-                        <p>/ person</p>
+                    <div  className="flex flex-row">
+                        <div>
+                            <h3 className='text-white'>Total</h3>
+                            <p className='text-slate-400 text-xs'>/ person</p>
+                        </div>
+                        <div>$0/00</div>
                     </div>
                     <div>
 
