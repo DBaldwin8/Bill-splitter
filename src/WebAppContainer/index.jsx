@@ -26,7 +26,7 @@ function WebAppContainer() {
                 <div className='bg-teal-900 rounded-xl'>
                     <div className="flex flex-row">
                         <div>
-                            <h3 className='text-white'>Tip Amount</h3>
+                            <h3 className='text-white text-sm'>Tip Amount</h3>
                             <p className='text-slate-400 text-xs'>/ person</p>
                         </div>
                         <div>
@@ -35,7 +35,7 @@ function WebAppContainer() {
                     </div>
                     <div  className="flex flex-row">
                         <div>
-                            <h3 className='text-white'>Total</h3>
+                            <h3 className='text-white text-sm'>Total</h3>
                             <p className='text-slate-400 text-xs'>/ person</p>
                         </div>
                         <div className="text-teal-400 text-5xl">$0.00</div>
