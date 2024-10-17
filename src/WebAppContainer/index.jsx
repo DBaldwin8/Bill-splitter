@@ -1,5 +1,7 @@
 // import NumberInputs from "../NumberInputs/index.jsx"
 
+import NumberInputs from "../NumberInputs"
+
 
 function WebAppContainer() {
     return (
@@ -10,23 +12,17 @@ function WebAppContainer() {
             </div>
             <div className="bg-white w-3/4 h-1/2 mx-auto rounded-3xl flex place-content-around">
                 <form className=''>
-                    <div className='flex flex-col'>
-                        <label htmlFor=''>Bill</label>
-                        <input id='' type='number' placeholder='0' className="placeholder:text-right"/>
-                    </div>
+                    <NumberInputs/>
                     <div>
                         <label htmlFor=''>Select Tip %</label>
                         
                     </div>
-                    <div className='flex flex-col'>
-                        <label htmlFor=''>Number of People</label>
-                        <input id='' type='number' placeholder='0' className="placeholder:text-right"/>
-                    </div>
+                    <NumberInputs/>
                 </form>
                 <div className='bg-teal-900 rounded-xl'>
                     <div className=''>
                         <div className="flex flex-row">
-                            <div className="p-">
+                            <div className="">
                                 <h3 className='text-white text-sm'>Tip Amount</h3>
                                 <p className='text-slate-400 text-xs'>/ person</p>
                             </div>
