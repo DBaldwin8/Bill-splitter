@@ -54,7 +54,7 @@ function WebAppContainer() {
                 <form className='w-1/2'>
                     <NumberInputs id="bill" name="Bill" step='0.01' handleChange={handleBillChange}/>
                     <div>
-                        <label htmlFor='tip'>Select Tip %</label>
+                        <label htmlFor='tip' className="text-xs">Select Tip %</label>
                         <p>
                         <Button clickHandler={handle5Perc} tipPerc={"5"}/>
                         <Button clickHandler={handle10Perc} tipPerc={"10"}/>
