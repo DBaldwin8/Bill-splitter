@@ -49,7 +49,7 @@ function WebAppContainer() {
             <p className='text-3xl'>SPLI</p>
             <p className='text-3xl'>TTER </p>
         </div>
-        <div className="bg-white w-1/2 h-3/4 mx-auto rounded-3xl">
+        <div className="bg-white w-1/2 mx-auto rounded-3xl">
             <div className="flex p-8">
                 <form className='w-1/2 pr-8'>
                     <NumberInputs id="bill" name="Bill" step='0.01' handleChange={handleBillChange}/>
@@ -66,8 +66,8 @@ function WebAppContainer() {
                     </div>
                     <NumberInputs id="numPeople" name="Number of People" step='1' handleChange={handleNumOfPeepChange}/>
                 </form>
-                <div className='bg-teal-900 rounded-xl w-1/2'>
-                    <div className='border-red-500 p-4 border-2'>
+                <div className='bg-teal-900 rounded-2xl w-1/2'>
+                    <div className='border-red-500 p-6 border-2'>
                         <div className="flex flex-row border-blue-500 border-2 justify-between py-6">
                             <div className="border-yellow-500 border-2">
                                 <h3 className='text-white text-sm'>Tip Amount</h3>
@@ -84,7 +84,7 @@ function WebAppContainer() {
                             </div>
                             <div className="text-teal-400 text-5xl">$0.00</div>
                         </div>
-                        <div className="pt-32">
+                        <div className="pt-24">
                             <button className="bg-teal-700 w-72 h-8 block mx-auto text-teal-800 rounded">Reset</button>
                         </div>
                     </div>
