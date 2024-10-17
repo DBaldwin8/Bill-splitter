@@ -50,8 +50,8 @@ function WebAppContainer() {
             <p className='text-3xl'>TTER </p>
         </div>
         <div className="bg-white w-1/2 h-3/4 mx-auto rounded-3xl">
-            <div className="flex p-8" >
-                <form className='w-1/2'>
+            <div className="flex p-8">
+                <form className='w-1/2 pr-8'>
                     <NumberInputs id="bill" name="Bill" step='0.01' handleChange={handleBillChange}/>
                     <div className="py-8">
                         <label htmlFor='tip' className="text-xs">Select Tip %</label>
