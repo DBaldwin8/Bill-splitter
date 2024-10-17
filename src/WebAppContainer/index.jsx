@@ -13,12 +13,12 @@ function WebAppContainer() {
         </div>
         <div className="bg-white w-3/4 h-1/2 mx-auto rounded-3xl flex place-content-around">
             <form className=''>
-                <NumberInputs/>
+                <NumberInputs id="bill" name="Bill"/>
                 <div>
                     <label htmlFor=''>Select Tip %</label>
                     
                 </div>
-                <NumberInputs/>
+                <NumberInputs id="numPeople" name="Number of People"/>
             </form>
             <div className='bg-teal-900 rounded-xl'>
                 <div className=''>
@@ -44,7 +44,11 @@ function WebAppContainer() {
                 </div>
             </div>
         </div>
-        <Button/>
+        <Button tipPerc={"5"}/>
+        <Button tipPerc={"10"}/>
+        <Button tipPerc={"15"}/>
+        <Button tipPerc={"25"}/>
+        <Button tipPerc={"50"}/>
     </div>
     )
 }
