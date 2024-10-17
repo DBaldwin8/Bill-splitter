@@ -1,31 +1,71 @@
-// import NumberInputs from "../NumberInputs/index.jsx"
+import { useState } from "react";
 
 import Button from "../Button"
 import NumberInputs from "../NumberInputs"
 // FONT SPACE MONO
 
 function WebAppContainer() {
+
+    const [tipStatus, setTipStatus] =  useState(0)
+    const [bill, setBill] = useState('')
+    const [numOfPeep, setNumOfPeep] = useState('')
+
+    function handle5Perc(e) {
+        e.preventDefault()
+        setTipStatus(5)
+    }
+
+    function handle10Perc(e) {
+        e.preventDefault()
+        setTipStatus(10)
+    }
+
+    function handle15Perc(e) {
+        e.preventDefault()
+        setTipStatus(15)
+    }
+    
+    function handle25Perc(e) {
+        e.preventDefault()
+        setTipStatus(25)
+    }
+    
+    function handle50Perc(e) {
+        e.preventDefault()
+        setTipStatus(50)
+    }
+    
+    function handleBillChange(event) {
+        setBill(event.target.value)
+    }
+
+    function handleNumOfPeepChange(e) {
+        setNumOfPeep(e.target.value)
+    }
+
     return (
     <div>
         <div className='flex flex-col items-center mt-28 mb-12'>
             <p className='text-3xl'>SPLI</p>
             <p className='text-3xl'>TTER </p>
         </div>
-        <div className="bg-white w-3/4 h-1/2 mx-auto rounded-3xl">
-            <div className="flex p-8">
-                <form className=''>
-                    <NumberInputs id="bill" name="Bill"/>
+        <div className="bg-white w-1/2 h-3/4 mx-auto rounded-3xl">
+            <div className="flex p-8" >
+                <form className='w-1/2'>
+                    <NumberInputs id="bill" name="Bill" step='0.01' handleChange={handleBillChange}/>
                     <div>
                         <label htmlFor='tip'>Select Tip %</label>
-                        <Button tipPerc={"5"} id={'tip'}/>
-                        <Button tipPerc={"10"} id={'tip'}/>
-                        <Button tipPerc={"15"} id={'tip'}/>
-                        <Button tipPerc={"25"} id={'tip'}/>
-                        <Button tipPerc={"50"} id={'tip'}/>
+                        <p>
+                        <Button clickHandler={handle5Perc} tipPerc={"5"}/>
+                        <Button clickHandler={handle10Perc} tipPerc={"10"}/>
+                        <Button clickHandler={handle15Perc} tipPerc={"15"}/>
+                        <Button clickHandler={handle25Perc} tipPerc={"25"}/>
+                        <Button clickHandler={handle50Perc} tipPerc={"50"}/>
+                        </p>
                     </div>
-                    <NumberInputs id="numPeople" name="Number of People"/>
+                    <NumberInputs id="numPeople" name="Number of People" step='1' handleChange={handleNumOfPeepChange}/>
                 </form>
-                <div className='bg-teal-900 rounded-xl'>
+                <div className='bg-teal-900 rounded-xl w-1/2'>
                     <div className=''>
                         <div className="flex flex-row">
                             <div className="">
@@ -50,6 +90,7 @@ function WebAppContainer() {
                 </div>
             </div>
         </div>     
+        <p>Tip applied is {tipStatus}. The bill is {bill}. The number of people is {numOfPeep}.</p>
     </div>
     )
 }
