@@ -55,12 +55,13 @@ function WebAppContainer() {
                     <NumberInputs id="bill" name="Bill" step='0.01' handleChange={handleBillChange}/>
                     <div className="py-8">
                         <label htmlFor='tip' className="text-xs">Select Tip %</label>
-                        <p>
+                        <p className="flex flex-wrap border-black border-2 justify-between gap-y-2">
                         <Button clickHandler={handle5Perc} tipPerc={"5"}/>
                         <Button clickHandler={handle10Perc} tipPerc={"10"}/>
                         <Button clickHandler={handle15Perc} tipPerc={"15"}/>
                         <Button clickHandler={handle25Perc} tipPerc={"25"}/>
                         <Button clickHandler={handle50Perc} tipPerc={"50"}/>
+                        <Button className="bg-teal-900 rounded-md text-white h-8 w-20 text-center" id='tip'>Custom</Button>
                         </p>
                     </div>
                     <NumberInputs id="numPeople" name="Number of People" step='1' handleChange={handleNumOfPeepChange}/>
