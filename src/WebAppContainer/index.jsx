@@ -45,7 +45,7 @@ function WebAppContainer() {
 
     return (
     <div>
-        <div className='flex flex-col items-center mt-28 mb-12'>
+        <div className='flex flex-col items-center mt-12 mb-12'>
             <p className='text-3xl'>SPLI</p>
             <p className='text-3xl'>TTER </p>
         </div>
