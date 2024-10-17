@@ -67,7 +67,7 @@ function WebAppContainer() {
                     <NumberInputs id="numPeople" name="Number of People" step='1' handleChange={handleNumOfPeepChange}/>
                 </form>
                 <div className='bg-teal-900 rounded-xl w-1/2'>
-                    <div className='border-red-500 border-2'>
+                    <div className='border-red-500 border-2 p-6'>
                         <div className="flex flex-row border-blue-500 border-2 justify-between">
                             <div className="border-yellow-500 border-2">
                                 <h3 className='text-white text-sm'>Tip Amount</h3>
