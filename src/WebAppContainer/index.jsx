@@ -67,7 +67,7 @@ function WebAppContainer() {
                     <NumberInputs id="numPeople" name="Number of People" step='1' handleChange={handleNumOfPeepChange}/>
                 </form>
                 <div className='bg-teal-900 rounded-xl w-1/2'>
-                    <div className='border-red-500 border-2 p-6'>
+                    <div className='border-red-500 border-2'>
                         <div className="flex flex-row border-blue-500 border-2 justify-between">
                             <div className="border-yellow-500 border-2">
                                 <h3 className='text-white text-sm'>Tip Amount</h3>
@@ -84,8 +84,8 @@ function WebAppContainer() {
                             </div>
                             <div className="text-teal-400 text-5xl">$0.00</div>
                         </div>
-                        <div>
-                            <button className="bg-teal-700 w-72 text-teal-800">Reset</button>
+                        <div className="pt-32 border-yellow-500 border-2">
+                            <button className="bg-teal-700 w-72 h-8 block mx-auto text-teal-800 rounded">Reset</button>
                         </div>
                     </div>
                 </div>
