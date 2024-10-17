@@ -53,7 +53,7 @@ function WebAppContainer() {
             <div className="flex p-8" >
                 <form className='w-1/2'>
                     <NumberInputs id="bill" name="Bill" step='0.01' handleChange={handleBillChange}/>
-                    <div>
+                    <div className="py-8">
                         <label htmlFor='tip' className="text-xs">Select Tip %</label>
                         <p>
                         <Button clickHandler={handle5Perc} tipPerc={"5"}/>
