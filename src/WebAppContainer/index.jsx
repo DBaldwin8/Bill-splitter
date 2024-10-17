@@ -74,7 +74,7 @@ function WebAppContainer() {
                                 <p className='text-slate-400 text-xs'>/ person</p>
                             </div>
                             <div>
-                                <div className="text-teal-400 text-5xl border">$0.00</div>
+                                <div className="text-teal-400 text-4xl border">$0.00</div>
                             </div>
                         </div>
                         <div  className="flex flex-row justify-between">
@@ -82,9 +82,9 @@ function WebAppContainer() {
                                 <h3 className='text-white text-sm'>Total</h3>
                                 <p className='text-slate-400 text-xs'>/ person</p>
                             </div>
-                            <div className="text-teal-400 text-5xl">$0.00</div>
+                            <div className="text-teal-400 text-4xl">$0.00</div>
                         </div>
-                        <div className="pt-24">
+                        <div className="pt-20">
                             <button className="bg-teal-700 w-72 h-8 block mx-auto text-teal-800 rounded">Reset</button>
                         </div>
                     </div>
