@@ -43,11 +43,33 @@ function WebAppContainer() {
         setNumOfPeep(e.target.value)
     }
 
+    function resetClick(e) {
+        e.preventDefault();
+        setTipStatus(0);
+        setBill(0);
+        setNumOfPeep(0);
+    }
+
+    const billAfterTip = (bill, tipStatus) => {
+        const tipAmount = (bill / 100)*tipStatus;
+        let amount = bill + tipAmount;
+        return amount.toFixed(2);
+    }
+    
+    console.log(billAfterTip(100, 5));
+    
+    const billSplit = (billAfterTip, numOfPeep) => {
+        let amount = billAfterTip/numOfPeep;
+        return amount.toFixed(2);
+    }
+    
+    console.log(billSplit(105,10));
+
     return (
-    <div>
+    <div className="font-mono">
         <div className='flex flex-col items-center mt-12 mb-12'>
-            <p className='text-3xl'>SPLI</p>
-            <p className='text-3xl'>TTER </p>
+            <p className='text-3xl text-slate-500'>SPLI</p>
+            <p className='text-3xl text-slate-500'>TTER </p>
         </div>
         <div className="bg-white w-1/2 mx-auto rounded-3xl">
             <div className="flex p-8">
@@ -61,20 +83,20 @@ function WebAppContainer() {
                         <Button clickHandler={handle15Perc} tipPerc={"15"}/>
                         <Button clickHandler={handle25Perc} tipPerc={"25"}/>
                         <Button clickHandler={handle50Perc} tipPerc={"50"}/>
-                        <button className="bg-slate-50 text-slate-500 rounded-md h-8 w-24 text-center" id='tip'>Custom</button>
+                        <button onClick={resetClick} className="bg-slate-50 text-slate-500 rounded-md h-8 w-24 text-center" id='tip'>Custom</button>
                         </p>
                     </div>
                     <NumberInputs id="numPeople" name="Number of People" step='1' handleChange={handleNumOfPeepChange}/>
                 </form>
                 <div className='bg-teal-900 rounded-2xl w-1/2'>
-                    <div className='border-red-500 p-6 border-2'>
-                        <div className="flex flex-row border-blue-500 border-2 justify-between py-6">
-                            <div className="border-yellow-500 border-2">
+                    <div className='p-6'>
+                        <div className="flex flex-row justify-between py-6">
+                            <div className="">
                                 <h3 className='text-white text-sm'>Tip Amount</h3>
                                 <p className='text-slate-400 text-xs'>/ person</p>
                             </div>
                             <div>
-                                <div className="text-teal-400 text-4xl border">$0.00</div>
+                                <div className="text-teal-400 text-4xl">$0.00</div>
                             </div>
                         </div>
                         <div  className="flex flex-row justify-between">
