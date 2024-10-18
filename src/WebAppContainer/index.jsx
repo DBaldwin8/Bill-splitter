@@ -61,7 +61,7 @@ function WebAppContainer() {
                         <Button clickHandler={handle15Perc} tipPerc={"15"}/>
                         <Button clickHandler={handle25Perc} tipPerc={"25"}/>
                         <Button clickHandler={handle50Perc} tipPerc={"50"}/>
-                        <button className="bg-slate-50 text-slate-500 rounded-md h-8 w-20 text-center" id='tip'>Custom</button>
+                        <button className="bg-slate-50 text-slate-500 rounded-md h-8 w-24 text-center" id='tip'>Custom</button>
                         </p>
                     </div>
                     <NumberInputs id="numPeople" name="Number of People" step='1' handleChange={handleNumOfPeepChange}/>
