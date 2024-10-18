@@ -113,7 +113,6 @@ function WebAppContainer() {
                 </div>
             </div>
         </div>     
-        <p>Tip applied is {tipStatus}. The bill is {bill}. The number of people is {numOfPeep}.</p>
     </div>
     )
 }
