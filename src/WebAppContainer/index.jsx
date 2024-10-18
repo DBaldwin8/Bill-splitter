@@ -66,6 +66,10 @@ function WebAppContainer() {
         setTipPerPerson(tipPer.toFixed(2));
         }, [bill, tipStatus, numOfPeep]);
 
+    function preventReload(event) {
+        event.preventDefault();
+    }
+
     return (
     <div className="font-mono">
         <div className='flex flex-col items-center mt-12 mb-12'>
@@ -75,7 +79,7 @@ function WebAppContainer() {
         <div className="bg-white w-1/2 mx-auto rounded-3xl">
             <div className="flex p-8">
                 <form className='w-1/2 pr-8'>
-                    <NumberInputs id="bill" name="Bill" placeholder='0' step='0.01' min='0' handleChange={handleBillChange}/>
+                    <NumberInputs id="bill" name="Bill" step='0.01' min='0' value={bill} handleChange={handleBillChange}/>
                     <div className="py-8">
                         <label htmlFor='tip' className="text-xs text-slate-500">Select Tip %</label>
                         <p className="flex flex-wrap justify-between pt-2 gap-y-2">
@@ -84,10 +88,10 @@ function WebAppContainer() {
                         <Button clickHandler={handle15Perc} tipPerc={"15"}/>
                         <Button clickHandler={handle25Perc} tipPerc={"25"}/>
                         <Button clickHandler={handle50Perc} tipPerc={"50"}/>
-                        <button className="bg-slate-50 text-slate-500 rounded-md h-8 w-24 text-center" id='tip'>Custom</button>
+                        <button onclick={preventReload} className="bg-slate-50 text-slate-500 rounded-md h-8 w-24 text-center" id='tip'>Custom</button>
                         </p>
                     </div>
-                    <NumberInputs id="numPeople" name="Number of People" placeholder='1' step='1' min='1' handleChange={handleNumOfPeepChange}/>
+                    <NumberInputs id="numPeople" name="Number of People" step='1' min='1' value={numOfPeep} handleChange={handleNumOfPeepChange}/>
                 </form>
                 <div className='bg-teal-900 rounded-2xl w-1/2'>
                     <div className='p-6'>
