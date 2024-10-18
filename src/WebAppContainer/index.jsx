@@ -8,7 +8,7 @@ function WebAppContainer() {
 
     const [tipStatus, setTipStatus] =  useState(0);
     const [bill, setBill] = useState(0);
-    const [numOfPeep, setNumOfPeep] = useState(0);
+    const [numOfPeep, setNumOfPeep] = useState(1);
     const [tipPerPerson, setTipPerPerson] = useState(0);
     const [totalPerPerson, setTotalPerPerson] = useState(0);
 
@@ -46,13 +46,10 @@ function WebAppContainer() {
     }
 
     useEffect( () => {
-        let amount = ((bill/100)*tipStatus)/numOfPeep;
-        setTipPerPerson(amount.toFixed(2));
-        }, [bill, tipStatus, numOfPeep]);
-
-    useEffect( () => {
-        let amount = (bill/numOfPeep)+(((bill/100)*tipStatus)/numOfPeep);
-        setTotalPerPerson(amount.toFixed(2));
+        const tipPer = ((bill/100)*tipStatus)/numOfPeep;
+        const totalPer = tipPer+(bill/numOfPeep);
+        setTotalPerPerson(totalPer.toFixed(2))
+        setTipPerPerson(tipPer.toFixed(2));
         }, [bill, tipStatus, numOfPeep]);
 
     return (
@@ -64,7 +61,7 @@ function WebAppContainer() {
         <div className="bg-white w-1/2 mx-auto rounded-3xl">
             <div className="flex p-8">
                 <form className='w-1/2 pr-8'>
-                    <NumberInputs id="bill" name="Bill" step='0.01' handleChange={handleBillChange}/>
+                    <NumberInputs id="bill" name="Bill" placeholder='0' step='0.01' min='0' handleChange={handleBillChange}/>
                     <div className="py-8">
                         <label htmlFor='tip' className="text-xs text-slate-500">Select Tip %</label>
                         <p className="flex flex-wrap justify-between pt-2 gap-y-2">
@@ -76,7 +73,7 @@ function WebAppContainer() {
                         <button className="bg-slate-50 text-slate-500 rounded-md h-8 w-24 text-center" id='tip'>Custom</button>
                         </p>
                     </div>
-                    <NumberInputs id="numPeople" name="Number of People" step='1' handleChange={handleNumOfPeepChange}/>
+                    <NumberInputs id="numPeople" name="Number of People" placeholder='1' step='1' min='1' handleChange={handleNumOfPeepChange}/>
                 </form>
                 <div className='bg-teal-900 rounded-2xl w-1/2'>
                     <div className='p-6'>
