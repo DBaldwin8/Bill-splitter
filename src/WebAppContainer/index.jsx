@@ -7,7 +7,7 @@ import NumberInputs from "../NumberInputs"
 function WebAppContainer() {
 
     const [tipStatus, setTipStatus] =  useState(0);
-    const [bill, setBill] = useState('');
+    const [bill, setBill] = useState(0);
     const [numOfPeep, setNumOfPeep] = useState(0);
     const [tipPerPerson, setTipPerPerson] = useState(0);
     const [totalPerPerson, setTotalPerPerson] = useState(0);
@@ -46,15 +46,14 @@ function WebAppContainer() {
     }
 
     useEffect( () => {
-        let amount = ((bill / 100)*tipStatus)/numOfPeep;
+        let amount = ((bill/100)*tipStatus)/numOfPeep;
         setTipPerPerson(amount.toFixed(2));
         }, [bill, tipStatus, numOfPeep]);
 
     useEffect( () => {
-        let amount = (bill/numOfPeep)+(((bill / 100)*tipStatus)/numOfPeep);
+        let amount = (bill/numOfPeep)+(((bill/100)*tipStatus)/numOfPeep);
         setTotalPerPerson(amount.toFixed(2));
         }, [bill, tipStatus, numOfPeep]);
-
 
     return (
     <div className="font-mono">
@@ -87,7 +86,7 @@ function WebAppContainer() {
                                 <p className='text-slate-400 text-xs'>/ person</p>
                             </div>
                             <div>
-                                <div className="text-teal-400 text-4xl">{tipPerPerson}</div>
+                                <div className="text-teal-400 text-4xl">${tipPerPerson}</div>
                             </div>
                         </div>
                         <div  className="flex flex-row justify-between">
@@ -95,7 +94,7 @@ function WebAppContainer() {
                                 <h3 className='text-white text-sm'>Total</h3>
                                 <p className='text-slate-400 text-xs'>/ person</p>
                             </div>
-                            <div className="text-teal-400 text-4xl">{totalPerPerson}</div>
+                            <div className="text-teal-400 text-4xl">${totalPerPerson}</div>
                         </div>
                         <div className="pt-20">
                             <button className="bg-teal-700 w-72 h-8 block mx-auto text-teal-800 rounded">Reset</button>
