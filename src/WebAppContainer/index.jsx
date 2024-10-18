@@ -38,12 +38,9 @@ function WebAppContainer() {
     }
     
     function handleReset(e) {
-        e.preventDefault();
         setTipStatus(0);
         setBill(0);
-        setNumOfPeep(0);
-        setTipPerPerson(0);
-        setTotalPerPerson(0);
+        setNumOfPeep(1);
     }
 
     function handleBillChange(e) {
@@ -111,7 +108,7 @@ function WebAppContainer() {
                             <div className="text-teal-400 text-4xl">${totalPerPerson}</div>
                         </div>
                         <div className="pt-20">
-                            <button clickHandler={handleReset} className="bg-teal-700 w-72 h-8 block mx-auto text-teal-800 rounded">Reset</button>
+                            <button onClick={handleReset} className="bg-teal-700 w-72 h-8 block mx-auto text-teal-800 rounded">Reset</button>
                         </div>
                     </div>
                 </div>
