@@ -37,12 +37,29 @@ function WebAppContainer() {
         setTipStatus(50);
     }
     
-    function handleBillChange(event) {
-        setBill(event.target.value);
+    function handleReset(e) {
+        e.preventDefault();
+        setTipStatus(0);
+        setBill(0);
+        setNumOfPeep(0);
+        setTipPerPerson(0);
+        setTotalPerPerson(0);
+    }
+
+    function handleBillChange(e) {
+        if (e.target.value < 0){
+            setBill(0);
+        } else {
+            setBill(e.target.value);
+        }
     }
 
     function handleNumOfPeepChange(e) {
-        setNumOfPeep(e.target.value);
+        if (e.target.value < 1){
+            setNumOfPeep(1);
+        } else {
+            setNumOfPeep(e.target.value);
+        }
     }
 
     useEffect( () => {
@@ -94,7 +111,7 @@ function WebAppContainer() {
                             <div className="text-teal-400 text-4xl">${totalPerPerson}</div>
                         </div>
                         <div className="pt-20">
-                            <button className="bg-teal-700 w-72 h-8 block mx-auto text-teal-800 rounded">Reset</button>
+                            <button clickHandler={handleReset} className="bg-teal-700 w-72 h-8 block mx-auto text-teal-800 rounded">Reset</button>
                         </div>
                     </div>
                 </div>
