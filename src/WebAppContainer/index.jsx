@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Button from "../Button"
 import NumberInputs from "../NumberInputs"
@@ -6,64 +6,55 @@ import NumberInputs from "../NumberInputs"
 
 function WebAppContainer() {
 
-    const [tipStatus, setTipStatus] =  useState(0)
-    const [bill, setBill] = useState('')
-    const [numOfPeep, setNumOfPeep] = useState('')
+    const [tipStatus, setTipStatus] =  useState(0);
+    const [bill, setBill] = useState('');
+    const [numOfPeep, setNumOfPeep] = useState(0);
+    const [tipPerPerson, setTipPerPerson] = useState(0);
+    const [totalPerPerson, setTotalPerPerson] = useState(0);
 
     function handle5Perc(e) {
-        e.preventDefault()
-        setTipStatus(5)
+        e.preventDefault();
+        setTipStatus(5);
     }
 
     function handle10Perc(e) {
-        e.preventDefault()
-        setTipStatus(10)
+        e.preventDefault();
+        setTipStatus(10);
     }
 
     function handle15Perc(e) {
-        e.preventDefault()
-        setTipStatus(15)
+        e.preventDefault();
+        setTipStatus(15);
     }
     
     function handle25Perc(e) {
-        e.preventDefault()
-        setTipStatus(25)
+        e.preventDefault();
+        setTipStatus(25);
     }
     
     function handle50Perc(e) {
-        e.preventDefault()
-        setTipStatus(50)
+        e.preventDefault();
+        setTipStatus(50);
     }
     
     function handleBillChange(event) {
-        setBill(event.target.value)
+        setBill(event.target.value);
     }
 
     function handleNumOfPeepChange(e) {
-        setNumOfPeep(e.target.value)
+        setNumOfPeep(e.target.value);
     }
 
-    function resetClick(e) {
-        e.preventDefault();
-        setTipStatus(0);
-        setBill(0);
-        setNumOfPeep(0);
-    }
+    useEffect( () => {
+        let amount = ((bill / 100)*tipStatus)/numOfPeep;
+        setTipPerPerson(amount.toFixed(2));
+        }, [bill, tipStatus, numOfPeep]);
 
-    const billAfterTip = (bill, tipStatus) => {
-        const tipAmount = (bill / 100)*tipStatus;
-        let amount = bill + tipAmount;
-        return amount.toFixed(2);
-    }
-    
-    console.log(billAfterTip(100, 5));
-    
-    const billSplit = (billAfterTip, numOfPeep) => {
-        let amount = billAfterTip/numOfPeep;
-        return amount.toFixed(2);
-    }
-    
-    console.log(billSplit(105,10));
+    useEffect( () => {
+        let amount = (bill/numOfPeep)+(((bill / 100)*tipStatus)/numOfPeep);
+        setTotalPerPerson(amount.toFixed(2));
+        }, [bill, tipStatus, numOfPeep]);
+
 
     return (
     <div className="font-mono">
@@ -83,7 +74,7 @@ function WebAppContainer() {
                         <Button clickHandler={handle15Perc} tipPerc={"15"}/>
                         <Button clickHandler={handle25Perc} tipPerc={"25"}/>
                         <Button clickHandler={handle50Perc} tipPerc={"50"}/>
-                        <button onClick={resetClick} className="bg-slate-50 text-slate-500 rounded-md h-8 w-24 text-center" id='tip'>Custom</button>
+                        <button className="bg-slate-50 text-slate-500 rounded-md h-8 w-24 text-center" id='tip'>Custom</button>
                         </p>
                     </div>
                     <NumberInputs id="numPeople" name="Number of People" step='1' handleChange={handleNumOfPeepChange}/>
@@ -96,7 +87,7 @@ function WebAppContainer() {
                                 <p className='text-slate-400 text-xs'>/ person</p>
                             </div>
                             <div>
-                                <div className="text-teal-400 text-4xl">$0.00</div>
+                                <div className="text-teal-400 text-4xl">{tipPerPerson}</div>
                             </div>
                         </div>
                         <div  className="flex flex-row justify-between">
@@ -104,7 +95,7 @@ function WebAppContainer() {
                                 <h3 className='text-white text-sm'>Total</h3>
                                 <p className='text-slate-400 text-xs'>/ person</p>
                             </div>
-                            <div className="text-teal-400 text-4xl">$0.00</div>
+                            <div className="text-teal-400 text-4xl">{totalPerPerson}</div>
                         </div>
                         <div className="pt-20">
                             <button className="bg-teal-700 w-72 h-8 block mx-auto text-teal-800 rounded">Reset</button>
