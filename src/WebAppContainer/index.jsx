@@ -13,27 +13,22 @@ function WebAppContainer() {
     const [totalPerPerson, setTotalPerPerson] = useState(0);
 
     function handle5Perc(e) {
-        e.preventDefault();
         setTipStatus(5);
     }
 
     function handle10Perc(e) {
-        e.preventDefault();
         setTipStatus(10);
     }
 
     function handle15Perc(e) {
-        e.preventDefault();
         setTipStatus(15);
     }
     
     function handle25Perc(e) {
-        e.preventDefault();
         setTipStatus(25);
     }
     
     function handle50Perc(e) {
-        e.preventDefault();
         setTipStatus(50);
     }
     
@@ -78,7 +73,7 @@ function WebAppContainer() {
         </div>
         <div className="bg-white w-1/2 mx-auto rounded-3xl">
             <div className="flex p-8">
-                <form className='w-1/2 pr-8'>
+                <form onClick={preventReload} className='w-1/2 pr-8'>
                     <NumberInputs id="bill" name="Bill" step='0.01' min='0' value={bill} handleChange={handleBillChange}/>
                     <div className="py-8">
                         <label htmlFor='tip' className="text-xs text-slate-500">Select Tip %</label>
@@ -88,7 +83,7 @@ function WebAppContainer() {
                         <Button clickHandler={handle15Perc} tipPerc={"15"}/>
                         <Button clickHandler={handle25Perc} tipPerc={"25"}/>
                         <Button clickHandler={handle50Perc} tipPerc={"50"}/>
-                        <button onclick={preventReload} className="bg-slate-50 text-slate-500 rounded-md h-8 w-24 text-center" id='tip'>Custom</button>
+                        <button className="bg-slate-50 text-slate-500 rounded-md h-8 w-24 text-center" id='tip'>Custom</button>
                         </p>
                     </div>
                     <NumberInputs id="numPeople" name="Number of People" step='1' min='1' value={numOfPeep} handleChange={handleNumOfPeepChange}/>
