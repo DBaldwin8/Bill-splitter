@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Modal from 'react-modal';
+import Modal from "react-modal";
 import Button from "../Button"
 import NumberInputs from "../NumberInputs"
 // FONT SPACE MONO
