@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import Modal from 'react-modal';
 import Button from "../Button"
 import NumberInputs from "../NumberInputs"
 // FONT SPACE MONO
@@ -11,6 +11,7 @@ function WebAppContainer() {
     const [numOfPeep, setNumOfPeep] = useState(1);
     const [tipPerPerson, setTipPerPerson] = useState(0);
     const [totalPerPerson, setTotalPerPerson] = useState(0);
+    const [modalisOpen, setModalIsOpen] = useState(false);
 
     function handle5Perc(e) {
         setTipStatus(5);
@@ -52,6 +53,14 @@ function WebAppContainer() {
         } else {
             setNumOfPeep(e.target.value);
         }
+    }
+
+    function openModal() {
+        setModalIsOpen(true);
+    }
+
+    function closeModal(){
+        setModalIsOpen(false);
     }
 
     useEffect( () => {
