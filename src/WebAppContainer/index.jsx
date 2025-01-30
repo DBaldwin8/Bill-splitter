@@ -32,6 +32,14 @@ function WebAppContainer() {
     function handle50Perc(e) {
         setTipStatus(50);
     }
+
+    function handleCustomTip(e) {
+        if (e.target.value < 0 || e.target.value > 100){
+            setTipStatus(0);
+        } else {
+            setTipStatus(e.target.value);
+        }
+    }
     
     function handleReset(e) {
         setTipStatus(0);
@@ -93,8 +101,8 @@ function WebAppContainer() {
                         <Button clickHandler={handle25Perc} tipPerc={"25"}/>
                         <Button clickHandler={handle50Perc} tipPerc={"50"}/>
                         <button className="bg-slate-50 text-slate-500 rounded-md h-8 w-24 text-center" id='tip' onClick={openModal}>Custom</button>
-                        <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Modal to enter a custom tip amount">
-
+                        <Modal className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50" isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Modal to enter a custom tip amount">
+                            <NumberInputs id='tip' name="Tip" step='1' min='0' value={tipStatus} handleChange={handleCustomTip} ></NumberInputs>
                         </Modal>
                         </p>
                     </div>
