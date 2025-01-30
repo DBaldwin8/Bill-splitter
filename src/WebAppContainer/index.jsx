@@ -11,7 +11,7 @@ function WebAppContainer() {
     const [numOfPeep, setNumOfPeep] = useState(1);
     const [tipPerPerson, setTipPerPerson] = useState(0);
     const [totalPerPerson, setTotalPerPerson] = useState(0);
-    const [modalisOpen, setModalIsOpen] = useState(false);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
 
     function handle5Perc(e) {
         setTipStatus(5);
@@ -92,7 +92,10 @@ function WebAppContainer() {
                         <Button clickHandler={handle15Perc} tipPerc={"15"}/>
                         <Button clickHandler={handle25Perc} tipPerc={"25"}/>
                         <Button clickHandler={handle50Perc} tipPerc={"50"}/>
-                        <button className="bg-slate-50 text-slate-500 rounded-md h-8 w-24 text-center" id='tip'>Custom</button>
+                        <button className="bg-slate-50 text-slate-500 rounded-md h-8 w-24 text-center" id='tip' onClick={openModal}>Custom</button>
+                        <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Modal to enter a custom tip amount">
+
+                        </Modal>
                         </p>
                     </div>
                     <NumberInputs id="numPeople" name="Number of People" step='1' min='1' value={numOfPeep} handleChange={handleNumOfPeepChange}/>
