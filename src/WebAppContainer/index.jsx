@@ -85,13 +85,13 @@ function WebAppContainer() {
     }
 
     return (
-        <div className="">
+        <>
             <div className='flex flex-col items-center mt-12 mb-12'>
                 <p className='text-3xl text-slate-500'>SPLI</p>
                 <p className='text-3xl text-slate-500'>TTER </p>
             </div>
             <div className="bg-white w-1/2 mx-auto rounded-3xl">
-                <div className="flex p-8">
+                <div className="flex md:flex-row flex-col p-8">
                     <form onClick={preventReload} className='w-1/2 pr-8'>
                         <NumberInputs id="bill" name="Bill" step='0.01' min='0' value={bill} handleChange={handleBillChange} />
                         <div className="py-8">
@@ -136,7 +136,7 @@ function WebAppContainer() {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 
