@@ -34,7 +34,7 @@ function WebAppContainer() {
     }
 
     function handleCustomTip(e) {
-        if (e.target.value < 0 || e.target.value > 100) {
+        if (e.target.value < 0) {
             setTipStatus(0);
         } else {
             setTipStatus(e.target.value);
