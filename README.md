@@ -15,4 +15,5 @@ Tailwind.
 
 To do:
 Make the app responsive.
+Add favicon.
 Deploy to GitHub Pages.
