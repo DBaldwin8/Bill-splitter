@@ -1,4 +1,4 @@
-function NumberInputs({id, name, placeholder, step, min, value, handleChange, width}) {
+function NumberInputs({id, name, step, min, value, handleChange}) {
 
     return (
         <div className='flex flex-col'>
