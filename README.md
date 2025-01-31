@@ -14,6 +14,6 @@ React Modal
 Tailwind.
 
 To do:
-Make the app responsive.
 Add favicon.
 Deploy to GitHub Pages.
+Improve responsive tablet size.
