@@ -133,7 +133,7 @@ function WebAppContainer() {
                                 <div className="text-teal-400 text-4xl">${totalPerPerson}</div>
                             </div>
                             <div className="pt-20">
-                                <button onClick={handleReset} className="bg-teal-700 w-72 h-8 block mx-auto text-teal-800 rounded">Reset</button>
+                                <button onClick={handleReset} className="bg-teal-300 w-72 h-8 block mx-auto text-teal-800 rounded">Reset</button>
                             </div>
                         </div>
                     </div>
