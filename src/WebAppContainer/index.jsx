@@ -12,6 +12,7 @@ function WebAppContainer() {
     const [tipPerPerson, setTipPerPerson] = useState(0);
     const [totalPerPerson, setTotalPerPerson] = useState(0);
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [customText, setCustomText] = useState('Custom');
 
     function handle5Perc(e) {
         setTipStatus(5);
@@ -45,6 +46,7 @@ function WebAppContainer() {
         setTipStatus(0);
         setBill(0);
         setNumOfPeep(1);
+        setCustomText("Custom")
     }
 
     function handleBillChange(e) {
@@ -68,6 +70,7 @@ function WebAppContainer() {
     }
 
     function closeModal() {
+        setCustomText(tipStatus+"%");
         setModalIsOpen(false);
     }
 
@@ -100,7 +103,7 @@ function WebAppContainer() {
                                 <Button clickHandler={handle15Perc} tipPerc={"15"} />
                                 <Button clickHandler={handle25Perc} tipPerc={"25"} />
                                 <Button clickHandler={handle50Perc} tipPerc={"50"} />
-                                <button className="bg-slate-50 text-slate-500 rounded-md h-8 w-24 text-center" id='tip' onClick={openModal}>Custom</button>
+                                <button className="bg-slate-50 text-slate-500 rounded-md h-8 w-24 text-center" id='modal-open' onClick={openModal}>{customText}</button>
                                 <Modal className="fixed inset-0 flex flex-col bg-cyan-500 bg-opacity-50 pl-[27%] pt-[19.5%]" isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Modal to enter a custom tip amount">
                                             <NumberInputs id='tip' name="Enter Tip %" step='1' min='0' value={tipStatus} handleChange={handleCustomTip} width="w-[30%]" ></NumberInputs>
                                             <button className="bg-slate-50 text-slate-500 rounded-md h-8 w-24 text-center w-[30%] mt-2" onClick={closeModal}>Close</button>
