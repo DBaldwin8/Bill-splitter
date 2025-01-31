@@ -91,7 +91,7 @@ function WebAppContainer() {
                 <p className='text-3xl text-slate-500'>TTER </p>
             </div>
             <div className="bg-white md:w-1/2 w-11/12 mx-auto rounded-3xl">
-                <div className="flex md:flex-row flex-col p-8 gap-y-2">
+                <div className="flex md:flex-row flex-col p-8 gap-y-6">
                     <form onClick={preventReload} className='md:w-1/2 w-full md:pr-8 '>
                         <NumberInputs id="bill" name="Bill" step='0.01' min='0' value={bill} handleChange={handleBillChange} />
                         <div className="md:py-8 py-2">
