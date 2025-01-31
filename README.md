@@ -1,8 +1,18 @@
-# React + Vite
+# BILL SPLITTER APP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a Vite + React and tailwind project. I was given a design to follow.
+There was no plan shown for the custom tip button, I decided to make it a modal as I had not done one before. 
+I also chose to make the button update with the entered percentage.
 
-Currently, two official plugins are available:
+The bill splitter is designed to take a bill amount, tip% and number of people and dynamically display the tip ammount and total seperately per person.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project was following learning React. Displaying use of:
+Components,
+useState,
+useEffect.
+React Modal
+Tailwind.
+
+To do:
+Make the app responsive.
+Deploy to GitHub Pages.
