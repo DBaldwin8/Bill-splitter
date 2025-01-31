@@ -94,9 +94,9 @@ function WebAppContainer() {
                 <div className="flex md:flex-row flex-col p-8">
                     <form onClick={preventReload} className='md:w-1/2 w-full md:pr-8 '>
                         <NumberInputs id="bill" name="Bill" step='0.01' min='0' value={bill} handleChange={handleBillChange} />
-                        <div className="py-8">
+                        <div className="md:py-8 py-2">
                             <label htmlFor='tip' className="text-xs text-slate-500">Select Tip %</label>
-                            <p className="flex flex-wrap justify-between pt-2 gap-y-2">
+                            <p className="flex md:flex-wrap md:flex-row flex-col md:justify-between md:pt-2 gap-y-2">
                                 <Button clickHandler={handle5Perc} tipPerc={"5"} />
                                 <Button clickHandler={handle10Perc} tipPerc={"10"} />
                                 <Button clickHandler={handle15Perc} tipPerc={"15"} />
