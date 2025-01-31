@@ -86,11 +86,11 @@ function WebAppContainer() {
 
     return (
         <>
-            <div className='flex flex-col items-center mt-12 mb-12'>
+            <div className='flex flex-col items-center md:my-12 my-6'>
                 <p className='text-3xl text-slate-500'>SPLI</p>
                 <p className='text-3xl text-slate-500'>TTER </p>
             </div>
-            <div className="bg-white md:w-1/2 w-11/12 mx-auto rounded-3xl">
+            <div className="bg-white md:w-1/2 w-11/12 mx-auto rounded-3xl mb-6">
                 <div className="flex md:flex-row flex-col p-8 gap-y-6">
                     <form onClick={preventReload} className='md:w-1/2 w-full md:pr-8 '>
                         <NumberInputs id="bill" name="Bill" step='0.01' min='0' value={bill} handleChange={handleBillChange} />
@@ -130,7 +130,7 @@ function WebAppContainer() {
                                 <div className="text-teal-400 text-4xl">${totalPerPerson}</div>
                             </div>
                             <div className="pt-20">
-                                <button onClick={handleReset} className="bg-teal-300 w-72 h-8 block mx-auto text-teal-800 rounded">Reset</button>
+                                <button onClick={handleReset} className="bg-teal-300  w-full h-8 block mx-auto text-teal-800 rounded">Reset</button>
                             </div>
                         </div>
                     </div>
