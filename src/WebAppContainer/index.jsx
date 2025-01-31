@@ -102,7 +102,7 @@ function WebAppContainer() {
                                 <Button clickHandler={handle15Perc} tipPerc={"15"} />
                                 <Button clickHandler={handle25Perc} tipPerc={"25"} />
                                 <Button clickHandler={handle50Perc} tipPerc={"50"} />
-                                <button className="bg-slate-50 text-slate-500 rounded-md h-8 w-24 text-center" id='modal-open' onClick={openModal}>{customText}</button>
+                                <button className="bg-slate-50 text-slate-500 rounded-md h-8 md:w-24 w-full text-center" id='modal-open' onClick={openModal}>{customText}</button>
                                 <Modal className="fixed inset-0 flex flex-col bg-cyan-500 bg-opacity-50 pl-[27%] pt-[19.5%]" isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Modal to enter a custom tip amount">
                                             <NumberInputs id='tip' name="Enter Tip %" step='1' min='0' value={tipStatus} handleChange={handleCustomTip} width="w-[30%]" ></NumberInputs>
                                             <button className="bg-slate-50 text-slate-500 rounded-md h-8 w-24 text-center w-[30%] mt-2" onClick={closeModal}>Close</button>
