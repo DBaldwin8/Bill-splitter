@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Modal from "react-modal";
 import Button from "../Button"
 import NumberInputs from "../NumberInputs"
-// FONT SPACE MONO
 
 function WebAppContainer() {
 
@@ -86,7 +85,7 @@ function WebAppContainer() {
     }
 
     return (
-        <div className="font-mono">
+        <div className="">
             <div className='flex flex-col items-center mt-12 mb-12'>
                 <p className='text-3xl text-slate-500'>SPLI</p>
                 <p className='text-3xl text-slate-500'>TTER </p>
