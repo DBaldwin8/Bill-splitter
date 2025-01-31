@@ -103,12 +103,12 @@ function WebAppContainer() {
                                 <Button clickHandler={handle25Perc} tipPerc={"25"} />
                                 <Button clickHandler={handle50Perc} tipPerc={"50"} />
                                 <button className="bg-slate-50 text-slate-500 rounded-md h-8 md:w-24 w-full text-center" id='modal-open' onClick={openModal}>{customText}</button>
-                                <Modal className="fixed inset-0 flex flex-col bg-cyan-500 bg-opacity-50 md:pl-[27%] md:pt-[19.5%]" isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Modal to enter a custom tip amount">
+                                <Modal className="fixed inset-0 flex flex-col bg-cyan-500 bg-opacity-50" isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Modal to enter a custom tip amount">
                                     
-                                    {/* <div className=" flex flex-col justify-center items-center"> */}
-                                    <NumberInputs id='tip' name="Enter Tip %" step='1' min='0' value={tipStatus} handleChange={handleCustomTip} width="md:w-[30%] w-full" ></NumberInputs>
-                                    <button className="bg-slate-50 text-slate-500 rounded-md h-8 w-24 text-center md:w-[30%] mt-2" onClick={closeModal}>Close</button>
-                                    {/* </div> */}
+                                    <div className='flex flex-col md:w-1/4 md:mx-[25%] md:my-[19.5%] md:px-8 w-9/12 my-56 mx-12'>
+                                        <NumberInputs id='tip' name="Enter Tip %" step='1' min='0' value={tipStatus} handleChange={handleCustomTip}></NumberInputs>
+                                        <button className="bg-slate-50 text-slate-500 rounded-md h-8 text-center mt-2" onClick={closeModal}>Close</button>
+                                    </div>
 
                                 </Modal>
                             </p>
