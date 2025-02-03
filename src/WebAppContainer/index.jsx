@@ -10,7 +10,7 @@ function WebAppContainer() {
     const [numOfPeep, setNumOfPeep] = useState(1);
     const [tipPerPerson, setTipPerPerson] = useState(0);
     const [totalPerPerson, setTotalPerPerson] = useState(0);
-    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [modalVisibility, setModalVisibility] = useState(false);
     const [customText, setCustomText] = useState('Custom');
 
     function handle5Perc(e) {
@@ -65,12 +65,12 @@ function WebAppContainer() {
     }
 
     function openModal() {
-        setModalIsOpen(true);
+        setModalVisibility(true);
     }
 
     function closeModal() {
         setCustomText(tipStatus + "%");
-        setModalIsOpen(false);
+        setModalVisibility(false);
     }
 
     useEffect(() => {
@@ -103,7 +103,7 @@ function WebAppContainer() {
                                 <Button clickHandler={handle25Perc} tipPerc={"25"} />
                                 <Button clickHandler={handle50Perc} tipPerc={"50"} />
                                 <button className="bg-slate-50 text-slate-500 rounded-md h-8 md:w-24 w-full text-center" id='modal-open' onClick={openModal}>{customText}</button>
-                                <Modal className="fixed inset-0 flex flex-col bg-cyan-500 bg-opacity-50" isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Modal to enter a custom tip amount">
+                                <Modal className="fixed inset-0 flex flex-col bg-cyan-500 bg-opacity-50" isOpen={modalVisibility} onRequestClose={closeModal} contentLabel="Modal to enter a custom tip amount">
                                     <div className='flex flex-col md:w-1/4 md:mx-[25%] md:my-[19.5%] md:px-8 w-3/4 my-56 mx-12'>
                                         <NumberInputs id='tip' name="Enter Tip %" step='1' min='0' value={tipStatus} handleChange={handleCustomTip}></NumberInputs>
                                         <button className="bg-slate-50 text-slate-500 rounded-md h-8 text-center mt-2" onClick={closeModal}>Close</button>
@@ -132,7 +132,7 @@ function WebAppContainer() {
                                 <div className="text-teal-400 text-4xl">${totalPerPerson}</div>
                             </div>
                             <div className="pt-20">
-                                <button onClick={handleReset} className="bg-teal-300  w-full h-8 block mx-auto text-teal-800 rounded">Reset</button>
+                                <button onClick={handleReset} className="bg-teal-300 w-full h-8 block mx-auto text-teal-800 rounded">Reset</button>
                             </div>
                         </div>
                     </div>
